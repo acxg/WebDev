@@ -18,3 +18,13 @@ app.get("/dog", function(req, res){
     console.log("someone made a request to dog!");
     res.send("neow！");
 })
+
+app.get("/r/:Name", function(req, res){
+    var subreddit = req.params.Name;
+    res.send("welcome to subreddit " + subreddit.toUpperCase() + " here");
+})
+
+app.get("/r/:subReddit/comments/:id/:title", function(req, res){
+    console.log(req.params);
+    res.send("welcome to the comment");
+})
